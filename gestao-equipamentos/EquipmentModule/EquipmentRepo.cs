@@ -2,7 +2,7 @@
 {
     public class EquipmentRepo
     {
-        private List<Equipment> equipments { get; set; }
+        public List<Equipment> equipments { get; set; }
 
         public EquipmentRepo()
         {
@@ -33,6 +33,12 @@
         public List<Equipment> FindAllEquipments()
         {
             return equipments;
+        }
+
+        public Equipment FindEquipmentByName(string name)
+        {
+            return equipments.FirstOrDefault(e => e.Name == name);
+
         }
 
         public void AddEquipment(Equipment equipment)

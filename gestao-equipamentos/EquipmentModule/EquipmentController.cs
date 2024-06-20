@@ -22,5 +22,18 @@
             // Validation
             EquipmentRepo.AddEquipment(equipment);
         }
+
+        public void Edit(Equipment equipment)
+        {
+            EquipmentForm editEquipmentForm = new EquipmentForm(equipment);
+            if (equipment != null && equipment.Name != "")
+            {
+                if (editEquipmentForm.Equipment.Name != "" && editEquipmentForm.Equipment.Name != null)
+                {
+                    editEquipmentForm.ShowDialog();
+                }
+            }
+
+        }
     }
 }

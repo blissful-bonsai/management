@@ -5,13 +5,22 @@
         public Equipment Equipment { get; set; }
         public EquipmentForm()
         {
+            Equipment equipment = new Equipment();
             InitializeComponent();
-            Equipment = new Equipment();
             toolStripStatusLabel1.Text = "";
         }
 
+        public EquipmentForm(Equipment equipment)
+        {
+            InitializeComponent();
+            Equipment = equipment;
+            nameTextBox.Text = Equipment.Name;
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
+
             Equipment.Number = numberTextBox.Text;
             Equipment.Name = nameTextBox.Text;
             Equipment.FabricationDate = DateTime.Parse(dateTimeFab.Text);

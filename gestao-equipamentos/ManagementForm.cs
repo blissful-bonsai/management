@@ -18,5 +18,20 @@ public partial class ManagementForm : Form
         this.dataGridView1.DataSource = EquipmentController.GetAllEquipments().ToList(); // Why?
     }
 
-
+    private void editToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        if (this.dataGridView1.CurrentRow != null)
+        {
+            string name = this.dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            Equipment equipment = EquipmentController.EquipmentRepo.FindEquipmentByName(name);
+            if (equipment != null && equipment.Name != "")
+            {
+                EquipmentController.Edit(equipment);
+            }
+        }
+        else
+        {
+            MessageBox.Show("Row index out of bounds.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
 }
