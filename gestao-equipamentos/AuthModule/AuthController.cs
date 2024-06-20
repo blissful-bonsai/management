@@ -10,7 +10,7 @@
 
         public bool Auth(string username, string password)
         {
-            User? user = UserRepo.FindUserByLogin(username);
+            User? user = UserRepo.FindUserByLogin(username); // user becomes the returned User in the list 
             if (user != null && user.Password.Equals(password))
             {
                 return true;

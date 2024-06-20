@@ -18,9 +18,7 @@
         {
             EquipmentForm equipmentForm = new EquipmentForm();
             equipmentForm.ShowDialog();
-
             Equipment equipment = equipmentForm.Equipment;
-
             // Validation
             EquipmentRepo.AddEquipment(equipment);
         }

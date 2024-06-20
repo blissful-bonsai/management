@@ -12,7 +12,7 @@
 
         public User FindUserByLogin(string login)
         {
-            return UserList.Find(u => u.Login == login);
+            return UserList.Find(u => u.Login == login); // Linq
         }
 
         private void Seed()

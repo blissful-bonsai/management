@@ -37,7 +37,8 @@
 
         public void AddEquipment(Equipment equipment)
         {
-
+            this.equipments.Add(equipment);
         }
+
     }
 }
