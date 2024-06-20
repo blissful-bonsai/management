@@ -46,5 +46,15 @@
             this.equipments.Add(equipment);
         }
 
+        public void EditEquipment(Equipment equipment) // Necessary?
+        {
+
+        }
+
+        public void DeleteEquipment(Equipment equipment)
+        {
+            equipments.Remove(equipments.Find(e => e.Name == equipment.Name));
+        }
+
     }
 }

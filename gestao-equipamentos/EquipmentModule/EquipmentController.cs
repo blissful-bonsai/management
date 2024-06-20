@@ -33,7 +33,14 @@
                     editEquipmentForm.ShowDialog();
                 }
             }
+        }
 
+        public void Remove(Equipment equipment)
+        {
+            if (equipment != null && equipment.Name != "")
+            {
+                EquipmentRepo.DeleteEquipment(equipment);
+            }
         }
     }
 }

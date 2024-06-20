@@ -5,18 +5,22 @@
         public Equipment Equipment { get; set; }
         public EquipmentForm()
         {
-            Equipment equipment = new Equipment();
             InitializeComponent();
+            Equipment = new Equipment();
             toolStripStatusLabel1.Text = "";
         }
-
         public EquipmentForm(Equipment equipment)
         {
             InitializeComponent();
             Equipment = equipment;
             nameTextBox.Text = Equipment.Name;
+            numberTextBox.Text = Equipment.Number;
+            priceTextBox.Text = Equipment.Price.ToString();
+            dateTimeFab.Value = new DateTime(2020, 12, 09);
+            dateTimeLast.Value = new DateTime(2020, 12, 09);
+            brandTextBox.Text = Equipment.Brand;
+            serialNumberTextBox.Text = Equipment.SerialNumber.ToString();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,6 +39,11 @@
                 return;
             }
             this.Close();
+
+        }
+
+        private void priceTextBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

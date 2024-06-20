@@ -51,7 +51,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 15);
+            label1.Location = new Point(22, 189);
             label1.Name = "label1";
             label1.Size = new Size(51, 15);
             label1.TabIndex = 0;
@@ -60,18 +60,20 @@
             // serialNumberTextBox
             // 
             serialNumberTextBox.BackColor = Color.PeachPuff;
-            serialNumberTextBox.Location = new Point(137, 154);
+            serialNumberTextBox.Location = new Point(137, 9);
             serialNumberTextBox.Name = "serialNumberTextBox";
+            serialNumberTextBox.ReadOnly = true;
             serialNumberTextBox.Size = new Size(283, 23);
             serialNumberTextBox.TabIndex = 1;
             // 
             // priceTextBox
             // 
             priceTextBox.BackColor = Color.PeachPuff;
-            priceTextBox.Location = new Point(137, 183);
+            priceTextBox.Location = new Point(137, 154);
             priceTextBox.Name = "priceTextBox";
             priceTextBox.Size = new Size(283, 23);
             priceTextBox.TabIndex = 3;
+            priceTextBox.TextChanged += priceTextBox_TextChanged;
             // 
             // label2
             // 
@@ -111,7 +113,7 @@
             // numberTextBox
             // 
             numberTextBox.BackColor = Color.PeachPuff;
-            numberTextBox.Location = new Point(137, 9);
+            numberTextBox.Location = new Point(137, 183);
             numberTextBox.Name = "numberTextBox";
             numberTextBox.Size = new Size(283, 23);
             numberTextBox.TabIndex = 9;
@@ -119,7 +121,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(23, 160);
+            label5.Location = new Point(23, 15);
             label5.Name = "label5";
             label5.Size = new Size(79, 15);
             label5.TabIndex = 8;
@@ -136,7 +138,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(23, 189);
+            label6.Location = new Point(23, 160);
             label6.Name = "label6";
             label6.Size = new Size(33, 15);
             label6.TabIndex = 10;
