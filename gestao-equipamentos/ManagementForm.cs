@@ -12,10 +12,15 @@ public partial class ManagementForm : Form
         this.dataGridView1.DataSource = EquipmentController.GetAllEquipments();
     }
 
+    private void RefreshRows()
+    {
+        this.dataGridView1.DataSource = EquipmentController.GetAllEquipments().ToList();
+    }
+
     private void addToolStripMenuItem_Click(object sender, EventArgs e)
     {
         EquipmentController.Add();
-        this.dataGridView1.DataSource = EquipmentController.GetAllEquipments().ToList(); // Why?
+        RefreshRows();
     }
 
     private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,7 +32,9 @@ public partial class ManagementForm : Form
             if (equipment != null && equipment.Name != "")
             {
                 EquipmentController.Edit(equipment);
+                RefreshRows();
             }
+
         }
         else
         {
@@ -52,5 +59,12 @@ public partial class ManagementForm : Form
         {
             MessageBox.Show("Row index out of bounds.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+
+
+    private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
     }
 }

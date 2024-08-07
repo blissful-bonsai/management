@@ -9,7 +9,7 @@
             Equipment = new Equipment();
             toolStripStatusLabel1.Text = "";
         }
-        public EquipmentForm(Equipment equipment)
+        public EquipmentForm(Equipment equipment) // Edit constructor
         {
             InitializeComponent();
             Equipment = equipment;
@@ -38,7 +38,10 @@
                 toolStripStatusLabel1.Text = result;
                 return;
             }
-            this.Close();
+            if (result.Length == 0)
+            {
+                this.Close();
+            }
 
         }
 
@@ -46,7 +49,12 @@
         {
 
         }
+
+        internal void ShowErrorMessage(string errorMessage)
+        {
+            toolStripStatusLabel1.Text = errorMessage;
+            this.DialogResult = DialogResult.Abort;
+        }
     }
 }
 
-// This form has access to the MODEL only

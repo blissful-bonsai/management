@@ -48,6 +48,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(800, 423);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // menuStrip1
             // 
